@@ -1,0 +1,32 @@
+
+FROM docker.io/library/ruby:3.2-bullseye AS builder
+
+# RUN apt-get update -qq && \
+#   apt-get install -y --no-install-recommends \
+#     nodejs \
+#     build-essential \
+#     libpq-dev \
+#     libglib2.0-0 \
+#     chromium-driver && \
+#   rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update -qq && \
+  apt-get install -y --no-install-recommends \
+    build-essential \
+    chromium-driver \
+    graphviz \
+    libpq-dev \
+    nodejs && \
+  rm -rf /var/lib/apt/lists/*
+
+FROM builder AS runner
+
+RUN mkdir /surf_spot_community
+WORKDIR /surf_spot_community
+
+COPY Gemfile* ./
+
+RUN gem install bundler
+RUN bundle install
+
+COPY . .

@@ -1,0 +1,35 @@
+services:
+
+  surf_spot_community-db:
+    image: postgres:16
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file: 
+      - .env.local
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  surf_spot_community-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/surf_spot_community
+      - bundle-path:/bundle
+    env_file: 
+      - .env.local
+    environment:
+      - BUNDLE_PATH=/bundle/vendor
+    ports:
+      - "3006:3000"
+    depends_on:
+      - surf_spot_community-db
+  
+volumes:
+  postgres-data: 
+    driver: local
+  bundle-path:
+    driver: local
