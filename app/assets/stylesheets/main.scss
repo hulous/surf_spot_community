@@ -1,0 +1,19 @@
+@import "variables";
+
+body{
+	font-family: "Arial", sans-serif;
+	background: $primaryBackgroundColor;
+	line-height: 1.6em;
+}
+
+div p.alert {
+  margin-top: 5px;
+}
+
+td.actions-btn {
+	width: 320px;
+}
+
+div.actions {
+	margin: auto;
+}
