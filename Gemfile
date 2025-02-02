@@ -51,6 +51,8 @@ group :development, :test do
 
   gem "capybara",                      require: false
   gem "selenium-webdriver", "~> 4.11", require: false # required by capybara...
+
+  gem "rails-controller-testing"
 end
 
 group :development do
