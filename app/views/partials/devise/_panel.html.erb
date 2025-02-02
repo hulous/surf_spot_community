@@ -1,0 +1,16 @@
+<div class="devise logPanel">
+  <% if user_signed_in? %>
+    <div class="well">
+      <p><%= I18n.t("application.user.logged_as", email_link: link_to(current_user.email, user_path(current_user))).html_safe %></p>
+      <p><%= link_to(I18n.t("application.user.links.label.edit_profile"), edit_user_registration_path, class: "navbar-link") %></p>
+      <p><%= link_to(I18n.t("application.user.links.label.logout"), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger") %></p>
+    </div>
+  <% else %>
+    <% unless %w[registrations sessions passwords confirmations].include?(controller_name) %>
+      <div class="well">
+        <%= link_to(I18n.t("application.user.links.label.sign_up"), new_user_registration_path, class: "btn btn-outline-primary") %>
+        <%= link_to(I18n.t("application.user.links.label.login"), new_user_session_path, class: "btn btn-outline-success") %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
