@@ -1,0 +1,8 @@
+<h1><%= I18n.t("spot.edit.title") %></h1>
+<div><%= render partial: "form", locals: { spot: @spot } %></div>
+<br />
+
+<div>
+  <span><%= link_to(I18n.t("application.link.label.show", item: "spot"), @spot,  class: "btn btn-info") %></span>
+  <span><%= link_to(I18n.t("application.link.label.back", items: "spots"), spots_path, class: "btn btn-primary") %></span>
+</div>

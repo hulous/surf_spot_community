@@ -13,11 +13,11 @@ RSpec.describe Spot, type: :model do
     it { is_expected.to have_db_column(:created_at) }
     it { is_expected.to have_db_column(:updated_at) }
 
-    # === Database (Indexes) ===
-    it { is_expected.to have_db_index(["user_id"]) }
+    # # === Database (Indexes) ===
+    # it { is_expected.to have_db_index(["user_id"]) }
 
-    # === Relationship ===
-    it { is_expected.to belong_to(:user) }
+    # # === Relationship ===
+    # it { is_expected.to belong_to(:user) }
   end
 
   context "when a factory exist" do

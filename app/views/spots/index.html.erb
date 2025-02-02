@@ -1,0 +1,34 @@
+<h1><%= I18n.t("spot.index.title") %></h1>
+
+<div id="spots">
+  <table class="table">
+    <thead>
+      <th scope="col"><%= I18n.t("spot.labels.name") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.best_season") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.difficulty") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.wave_size") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.latitude") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.longitude") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.action") %></th>
+    </thead>
+    <tbody>
+      <% @spots.each do |spot| %>
+        <tr id="<%= dom_id spot %>">
+          <td><%= spot.name %></td>
+          <td><%= spot.best_season %></td>
+          <td><%= spot.difficulty %></td>
+          <td><%= spot.wave_size %></td>
+          <td><%= spot.latitude %></td>
+          <td><%= spot.longitude %></td>
+          <td class="actions-btn">
+            <span><%= link_to(I18n.t("application.item.action.show"), spot, class: "btn btn-outline-info btn-action") %></span>
+            <span><%= link_to(I18n.t("application.item.action.edit"), edit_spot_path(spot), class: "btn btn-outline-primary btn-action") %></span>
+            <span><%= link_to(I18n.t("application.item.action.destroy"), spot, method: :delete, class: "btn btn-outline-warning btn-action") %></span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div><%= link_to(I18n.t("application.link.label.new", item: "spot"), new_spot_path, class: "btn btn-primary") %></div>

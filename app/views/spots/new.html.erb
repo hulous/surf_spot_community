@@ -1,0 +1,4 @@
+<h1><%= I18n.t("spot.new.title") %></h1>
+<%= render "form", spot: @spot %>
+<br>
+<div><%= link_to(I18n.t("application.link.label.back", items: "spots"), spots_path) %></div>

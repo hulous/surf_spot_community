@@ -8,7 +8,7 @@ class CreateSpots < ActiveRecord::Migration[8.0]
       t.string :wave_size
       t.string :difficulty
       t.string :best_season
-      t.references :user, null: false, foreign_key: true
+      # t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
