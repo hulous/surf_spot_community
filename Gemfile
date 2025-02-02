@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby "3.2.0"
-
 gem "rails", "~> 8.0.1" # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 
 gem "pg", "~> 1.1"      # Use postgresql as the database for Active Record
@@ -14,6 +12,7 @@ gem "stimulus-rails"    # Hotwire's modest JavaScript framework [https://stimulu
 gem "jbuilder"          # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 
 # Bootstrap
+gem "sprockets-rails"
 gem "bootstrap"
 gem "jquery-rails"
 gem "sassc-rails"
