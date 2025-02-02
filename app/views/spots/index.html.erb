@@ -1,6 +1,7 @@
 <h1><%= I18n.t("spot.index.title") %></h1>
 
 <div id="spots">
+  <% unless @spots.count.zero? %>
   <table class="table">
     <thead>
       <th scope="col"><%= I18n.t("spot.labels.name") %></th>
@@ -9,7 +10,7 @@
       <th scope="col"><%= I18n.t("spot.labels.wave_size") %></th>
       <th scope="col"><%= I18n.t("spot.labels.latitude") %></th>
       <th scope="col"><%= I18n.t("spot.labels.longitude") %></th>
-      <th scope="col"><%= I18n.t("spot.labels.action") %></th>
+      <th scope="col"><%= I18n.t("spot.labels.actions") %></th>
     </thead>
     <tbody>
       <% @spots.each do |spot| %>
@@ -29,6 +30,7 @@
       <% end %>
     </tbody>
   </table>
+  <% end %>
 </div>
 
 <div><%= link_to(I18n.t("application.link.label.new", item: "spot"), new_spot_path, class: "btn btn-primary") %></div>

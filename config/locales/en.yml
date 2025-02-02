@@ -57,23 +57,3 @@ en:
       success: "Spot was successfully destroyed."
       failure: "Spot can not be destroyed."
 
-    labels:
-      title: "Title"
-      date: "Date"
-      spot_name: "Spot Name"
-      deep: "Deep"
-      divetime: "Dive Time"
-      actions: "Actions"
-    index:
-      title: "Dives"
-    new:
-      title: "New dive"
-    create:
-      success: "Dive was successfully created."
-    edit:
-      title: "Editing dive"
-    update:
-      success: "Dive was successfully updated."
-    destroy:
-      success: "Dive was successfully destroyed."
-      failure: "Dive can not be destroyed."
