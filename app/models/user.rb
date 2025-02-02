@@ -5,4 +5,10 @@ class User < ApplicationRecord
 
   # validator: a user must have a uniq email
   validates :email, presence: true, uniqueness: true
+
+  enum :role, {
+    reader: "reader",
+    writer: "writer",
+    admin: "admin"
+  }
 end
