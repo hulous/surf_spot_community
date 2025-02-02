@@ -32,3 +32,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# .env
+.env
+.env.*
+!.env.sample
+
+# test coverage
+/coverage
