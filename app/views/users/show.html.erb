@@ -1,0 +1,23 @@
+<h1><%= I18n.t("user.title") %></h1>
+<div>
+  <table class="table">
+    <thead>
+      <th scope="col"><%= I18n.t("user.labels.email") %></th>
+      <th scope="col"><%= I18n.t("user.labels.actions") %></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.email %></td>
+        <td class="actions-btn">
+          <span><%= link_to(I18n.t("user.link.edit"), edit_user_registration_path(@user), class: "btn btn-outline-primary btn-action") %></span>
+          <span><%= link_to(I18n.t("user.link.reset_password"), edit_user_password_path(@user), class: "btn btn-outline-secondary btn-action") %></span>
+          <span><%= link_to(I18n.t("user.link.delete"), user_path(@user), method: :delete, data: { confirm: I18n.t("application.item.action.confirm") }, class: "btn btn-outline-warning btn-action") %></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="diver">
+    <%= link_to(I18n.t("application.link.label.show", item: "diver"), diver_path(@user.diver),  class: "btn btn-info") %>
+  </div>
+</div>
