@@ -1,0 +1,10 @@
+<div>
+  <div><%= render @spot %></div>
+  <br />
+
+  <div>
+    <span><%= link_to(I18n.t("application.link.label.back", items: "spots"), spots_path, class: "btn btn-primary") %></span>
+    <span><%= link_to(I18n.t("application.link.label.edit", item: "spot"), edit_spot_path(@spot), class: "btn btn-outline-primary btn-action") %></span>
+    <span><%= link_to(I18n.t("application.link.label.destroy", item: "spot"), @spot, method: :delete, class: "btn btn-outline-warning btn-action") %></span>
+  </div>
+</div>

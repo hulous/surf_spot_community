@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_02_192338) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_201240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "spots", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "wave_size"
+    t.string "difficulty"
+    t.string "best_season"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

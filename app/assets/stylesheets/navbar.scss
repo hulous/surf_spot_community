@@ -1,0 +1,20 @@
+@import "variables";
+
+.navbar{
+	overflow: auto;
+	background: $secondaryBackgroundColor;
+	font-size: 18px;
+	border:0;
+	border-radius: 0;
+}
+
+.navbar .app-name {
+  margin: 15px !important;
+}
+
+.navbar .app-name a,
+.navbar .app-name a:hover,
+.navbar .app-name a:focus {
+  text-decoration: none;
+  color: $secondaryTextColor;
+}
