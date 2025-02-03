@@ -1,0 +1,52 @@
+<%= form_with(model: spot) do |form| %>
+  <% if spot.errors.any? %>
+    <div style="color: red">
+      <h2><%= I18n.t("application.form.error", count_string: pluralize(spot.errors.count, "error"), item: "spot") %></h2>
+
+      <ul>
+        <% spot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group clearfix">
+    <%= form.label :name %><br />
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, class:"form-control" %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, class:"form-control" %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :description %><br />
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :wave_size %>
+    <%= form.number_field :wave_size, class:"form-control" %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :difficulty %>
+    <%= form.select :difficulty, Spot.difficulties.keys.map { |key| [key.humanize, key] }, selected: @spot.difficulty || :beginner %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= form.label :best_season %>
+    <%= form.select :best_season, Spot.best_seasons.keys.map { |key| [key.humanize, key] }, selected: @spot.best_season || :summer %>
+  </div>
+
+  <div class="actions row justify-content-center">
+    <%= form.submit I18n.t("application.form.submit"), class: "btn btn-success" %>
+  </div>
+<% end %>

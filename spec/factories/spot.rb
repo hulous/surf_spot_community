@@ -4,9 +4,9 @@ FactoryBot.define do
     description { FFaker::Lorem.paragraph }
     latitude    { FFaker::Geolocation.lat }
     longitude   { FFaker::Geolocation.lng }
-    difficulty  { 'Intermediate' }
-    best_season { 'Summer' }
+    difficulty  { %i[beginner intermediate pro].sample }
+    best_season { %i[spring summer autumn winter].sample }
 
-    association :user
+    # association :user
   end
 end
