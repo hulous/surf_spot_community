@@ -50,7 +50,7 @@ group :development, :test do
   gem "simplecov", require: false
 
   gem "capybara",                      require: false
-  gem "selenium-webdriver", "~> 4.31", require: false # required by capybara...
+  gem "selenium-webdriver", "~> 4.32", require: false # required by capybara...
 
   gem "rails-controller-testing"
 end
